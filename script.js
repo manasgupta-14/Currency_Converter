@@ -62,89 +62,89 @@ swapBtn.addEventListener('click', () => {
     }, 200);
 });
 
-// convertBtn.addEventListener('click', async () => {
+convertBtn.addEventListener('click', async () => {
 
-//     let amount = amountInput.value;
+    let amount = amountInput.value;
 
-//     if (amount === "" || amount <= 0) {
-//         amount = 1;
-//         amountInput.value = 1;
-//     }
+    if (amount === "" || amount <= 0) {
+        amount = 1;
+        amountInput.value = 1;
+    }
 
-//     const originalText = convertBtn.innerHTML;
+    const originalText = convertBtn.innerHTML;
 
-//     convertBtn.innerHTML =
-//         '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+    convertBtn.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
 
-//     convertBtn.style.pointerEvents = 'none';
+    convertBtn.style.pointerEvents = 'none';
 
-//     const from = fromCurrency.value;
-//     const to = toCurrency.value;
+    const from = fromCurrency.value;
+    const to = toCurrency.value;
 
-//     try {
+    try {
 
-//         const response = await fetch(
-//             `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${from}`
-//         );
+        const response = await fetch(
+            `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${from}`
+        );
 
-//         const data = await response.json();
+        const data = await response.json();
 
-//         if (data.result === "success") {
+        if (data.result === "success") {
 
-//             const exchangeRate = data.conversion_rates[to];
+            const exchangeRate = data.conversion_rates[to];
 
-//             const totalAmount =
-//                 (amount * exchangeRate).toFixed(2);
+            const totalAmount =
+                (amount * exchangeRate).toFixed(2);
 
-//             const formattedAmount =
-//                 Number(totalAmount).toLocaleString('en-IN', {
-//                     minimumFractionDigits: 2,
-//                     maximumFractionDigits: 2
-//                 });
+            const formattedAmount =
+                Number(totalAmount).toLocaleString('en-IN', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
 
-//             const selectedOption =
-//                 toCurrency.options[toCurrency.selectedIndex];
+            const selectedOption =
+                toCurrency.options[toCurrency.selectedIndex];
 
-//             const currencyName =
-//                 selectedOption.textContent.replace(`${to} - `, '');
+            const currencyName =
+                selectedOption.textContent.replace(`${to} - `, '');
 
-//             resultText.innerHTML = `
-//                 ${formattedAmount} ${to}
-//                 <br>
-//                 <span style="font-size:16px;color:#aaa;">
-//                     (${currencyName})
-//                 </span>
-//             `;
+            resultText.innerHTML = `
+                ${formattedAmount} ${to}
+                <br>
+                <span style="font-size:16px;color:#aaa;">
+                    (${currencyName})
+                </span>
+            `;
 
-//         } else {
-//             resultText.innerHTML = "Error Fetching Rate!";
-//         }
+        } else {
+            resultText.innerHTML = "Error Fetching Rate!";
+        }
 
-//     } catch (error) {
+    } catch (error) {
 
-//         resultText.innerHTML = "Network Error!";
-//         console.error(error);
+        resultText.innerHTML = "Network Error!";
+        console.error(error);
 
-//     } finally {
+    } finally {
 
-//         convertBtn.innerHTML = originalText;
-//         convertBtn.style.pointerEvents = 'auto';
+        convertBtn.innerHTML = originalText;
+        convertBtn.style.pointerEvents = 'auto';
 
-//         resultBox.style.borderColor =
-//             'rgba(0,210,255,0.4)';
+        resultBox.style.borderColor =
+            'rgba(0,210,255,0.4)';
 
-//         setTimeout(() => {
+        setTimeout(() => {
 
-//             resultBox.style.borderColor =
-//                 'rgba(255,255,255,0.05)';
+            resultBox.style.borderColor =
+                'rgba(255,255,255,0.05)';
 
-//         }, 600);
-//     }
-// });
-// amountInput.addEventListener('keypress', function (e) {
+        }, 600);
+    }
+});
+amountInput.addEventListener('keypress', function (e) {
 
-//     if (e.key === 'Enter') {
-//         convertBtn.click();
-//     }
+    if (e.key === 'Enter') {
+        convertBtn.click();
+    }
 
-// });
+});
