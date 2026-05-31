@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Premium Currency Converter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="indexCss.css">
+</head>
+
+<body>
+
+    <div class="bg-animation"></div>
+
+    <div class="converter">
+        <h2><i class="fa-solid fa-earth-americas"></i> Converter</h2>
+
+        <div class="input-group">
+            <label>Amount</label>
+            <input type="number" class="amount-input" id="amountInput" placeholder="0.00">
+        </div>
+
+        <div class="currency-row">
+            <div class="select-box">
+                <select id="fromCurrency">
+                </select>
+            </div>
+
+            <button class="swap-btn" id="swapIcon">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <div class="select-box">
+                <select id="toCurrency">
+                </select>
+            </div>
+        </div>
+
+        <button class="convert-btn" id="convertBtn">
+            Convert Now
+        </button>
+
+        <div class="result" id="resultBox">
+            <p>Converted Amount</p>
+            <h3 id="resultText"></h3>
+        </div>
+    </div>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>
