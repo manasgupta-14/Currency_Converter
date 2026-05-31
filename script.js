@@ -49,18 +49,18 @@ async function loadCurrencies() {
 }
 loadCurrencies();
 
-// swapBtn.addEventListener('click', () => {
+swapBtn.addEventListener('click', () => {
 
-//     let temp = fromCurrency.value;
-//     fromCurrency.value = toCurrency.value;
-//     toCurrency.value = temp;
+    let temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
 
-//     resultBox.style.transform = 'scale(1.03)';
+    resultBox.style.transform = 'scale(1.03)';
 
-//     setTimeout(() => {
-//         resultBox.style.transform = 'scale(1)';
-//     }, 200);
-// });
+    setTimeout(() => {
+        resultBox.style.transform = 'scale(1)';
+    }, 200);
+});
 
 // convertBtn.addEventListener('click', async () => {
 
